@@ -1,7 +1,6 @@
 import { Leaf, MessageCircle, Shield, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "react-router-dom";
-import livLogo from "@/assets/liv-logo.png";
 
 export const Header = () => {
   const location = useLocation();
@@ -14,7 +13,7 @@ export const Header = () => {
           <div className="flex items-center gap-3">
             <a href="/" className="flex items-center gap-3">
               <img 
-                src={livLogo} 
+                src={"/Liv.png"} 
                 alt="Liv Cannabis" 
                 className="h-10 w-10"
               />
