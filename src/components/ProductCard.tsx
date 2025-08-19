@@ -19,11 +19,11 @@ const productOptions: ProductOption[] = [
 
 export const ProductCard = () => {
   const [selectedOption, setSelectedOption] = useState<ProductOption>(productOptions[1]);
-  const [paymentMethod, setPaymentMethod] = useState<'pix' | 'card'>('pix');
+  // Removido: const [paymentMethod, setPaymentMethod] = useState<'pix' | 'card'>('pix');
 
   const handlePurchase = () => {
     // TODO: Implement payment logic
-    console.log('Purchasing', selectedOption, 'via', paymentMethod);
+    console.log('Purchasing', selectedOption);
   };
 
   const savings = selectedOption.originalPrice ? selectedOption.originalPrice - selectedOption.price : 0;
@@ -146,7 +146,7 @@ export const ProductCard = () => {
               size="xl"
               className="w-full animate-pulse-glow"
             >
-              Comprar Agora - {paymentMethod === 'pix' ? 'PIX' : 'Cartão'}
+              Comprar Agora
             </Button>
 
             {/* Trust Indicators */}
