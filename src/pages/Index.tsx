@@ -23,12 +23,12 @@ const Index = () => {
         <img 
           src="/banner.png" 
           alt="Banner - Participe! Venha fazer parte!" 
-          className="w-full object-cover max-h-[500px] md:max-h-[600px] mt-8 transition-transform duration-700 hover:scale-105 animate-fade-in-up"
+          className="w-full object-cover max-h-[500px] md:max-h-[600px] mt-8 transition-transform duration-1000 hover:scale-110 animate-slide-in-down shadow-2xl rounded-3xl border-4 border-primary/60"
         />
       </section>
 
       {/* About Section */}
-      <section className="container mx-auto px-4 py-16 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+      <section className="container mx-auto px-4 py-16 animate-slide-in-left" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
             Tratamento de Qualidade
@@ -70,14 +70,14 @@ const Index = () => {
           ].map((feature, index) => (
             <div 
               key={index}
-              className="text-center p-6 rounded-lg bg-gradient-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-medium animate-fade-in-up"
-              style={{ animationDelay: `${0.3 + index * 0.15}s`, animationFillMode: 'both' }}
+              className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/20 border-2 border-primary/30 hover:border-primary/80 transition-all hover:shadow-glow animate-zoom-in"
+              style={{ animationDelay: `${0.7 + index * 0.2}s`, animationFillMode: 'both' }}
             >
-              <div className="inline-flex p-3 bg-primary/10 rounded-full mb-4">
-                <feature.icon className="h-6 w-6 text-primary" />
+              <div className="inline-flex p-3 bg-primary/10 rounded-full mb-4 animate-bounce">
+                <feature.icon className="h-8 w-8 text-primary drop-shadow-lg" />
               </div>
-              <h3 className="font-semibold mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
+              <h3 className="font-extrabold mb-2 text-lg animate-pulse text-primary">{feature.title}</h3>
+              <p className="text-base text-muted-foreground animate-fade-in-up">{feature.description}</p>
             </div>
           ))}
         </div>

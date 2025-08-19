@@ -175,3 +175,7 @@ All colors MUST be HSL.
     background-clip: text;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CreditCard, QrCode, Shield, Truck } from "lucide-react";
+import { CreditCard, QrCode, Shield, Truck, MapPin, User, CalendarCheck } from "lucide-react";
 import cannabisHero from "@/assets/cannabis-hero.jpg";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
 
 interface ProductOption {
   weight: string;
@@ -19,11 +22,28 @@ const productOptions: ProductOption[] = [
 
 export const ProductCard = () => {
   const [selectedOption, setSelectedOption] = useState<ProductOption>(productOptions[1]);
+  const [open, setOpen] = useState(false);
+  const [form, setForm] = useState({
+    payment: '',
+    city: '',
+    name: '',
+    date: ''
+  });
   // Removido: const [paymentMethod, setPaymentMethod] = useState<'pix' | 'card'>('pix');
 
   const handlePurchase = () => {
-    // TODO: Implement payment logic
-    console.log('Purchasing', selectedOption);
+    setOpen(true);
+  };
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aqui você pode processar os dados do formulário
+    setOpen(false);
+    alert('Pedido enviado!');
   };
 
   const savings = selectedOption.originalPrice ? selectedOption.originalPrice - selectedOption.price : 0;
@@ -110,44 +130,77 @@ export const ProductCard = () => {
               )}
             </div>
 
-            {/* Payment Method Selection */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium">Método de pagamento:</label>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => setPaymentMethod('pix')}
-                  className={`p-3 rounded-lg border-2 transition-all flex items-center justify-center gap-2 ${
-                    paymentMethod === 'pix'
-                      ? 'border-primary bg-primary/5 shadow-glow'
-                      : 'border-border hover:border-primary/30'
-                  }`}
-                >
-                  <QrCode className="h-4 w-4" />
-                  <span className="font-medium">PIX</span>
-                </button>
-                <button
-                  onClick={() => setPaymentMethod('card')}
-                  className={`p-3 rounded-lg border-2 transition-all flex items-center justify-center gap-2 ${
-                    paymentMethod === 'card'
-                      ? 'border-primary bg-primary/5 shadow-glow'
-                      : 'border-border hover:border-primary/30'
-                  }`}
-                >
-                  <CreditCard className="h-4 w-4" />
-                  <span className="font-medium">Cartão</span>
-                </button>
-              </div>
-            </div>
-
             {/* Purchase Button */}
-            <Button 
-              onClick={handlePurchase}
-              variant="hero"
-              size="xl"
-              className="w-full animate-pulse-glow"
-            >
-              Comprar Agora
-            </Button>
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <Button 
+                  onClick={handlePurchase}
+                  variant="hero"
+                  size="xl"
+                  className="w-full animate-pulse-glow"
+                >
+                  Comprar Agora
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-primary mb-2">Finalizar Pedido</DialogTitle>
+                  <p className="text-muted-foreground text-sm mb-4">Preencha os dados para concluir sua reserva. Entraremos em contato para confirmar!</p>
+                </DialogHeader>
+                <form className="space-y-5" onSubmit={handleSubmit}>
+                  <div>
+                    <label className="block text-sm font-medium mb-1 flex items-center gap-2"><CreditCard className="h-4 w-4 text-primary" /> Forma de pagamento</label>
+                    <select
+                      name="payment"
+                      value={form.payment}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                    >
+                      <option value="">Selecione</option>
+                      <option value="pix">PIX</option>
+                      <option value="cartao">Cartão de Crédito</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1 flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> Cidade</label>
+                    <input
+                      name="city"
+                      value={form.city}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                      placeholder="Digite sua cidade"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1 flex items-center gap-2"><User className="h-4 w-4 text-primary" /> Nome ou Apelido</label>
+                    <input
+                      name="name"
+                      value={form.name}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                      placeholder="Como prefere ser chamado?"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1 flex items-center gap-2"><CalendarCheck className="h-4 w-4 text-primary" /> Data para retirada</label>
+                    <input
+                      type="date"
+                      name="date"
+                      value={form.date}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                    />
+                  </div>
+                  <DialogFooter>
+                    <Button type="submit" variant="hero" className="w-full text-lg font-bold py-3 rounded-xl shadow-md hover:scale-105 transition-transform">Enviar Pedido</Button>
+                  </DialogFooter>
+                </form>
+              </DialogContent>
+            </Dialog>
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
