@@ -19,32 +19,16 @@ const Index = () => {
       <Header />
       
       {/* Hero Banner */}
-      <section className="w-full bg-gradient-hero relative overflow-hidden">
-        <div className="container mx-auto px-4 py-20 md:py-32">
-          <div className="text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-              Cannabis Medicinal
-              <span className="block text-white/90">Premium</span>
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-8">
-              Acesse sua conta e escolha seu tratamento com segurança. 
-              Produto certificado e entrega personalizada.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="font-semibold">
-                Fazer Login
-              </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
-                Criar Conta
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 pointer-events-none"></div>
+      <section className="w-full relative overflow-hidden">
+        <img 
+          src="/banner.png" 
+          alt="Banner - Participe! Venha fazer parte!" 
+          className="w-full object-cover max-h-[500px] md:max-h-[600px] mt-8 transition-transform duration-700 hover:scale-105 animate-fade-in-up"
+        />
       </section>
 
       {/* About Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-16 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
             Tratamento de Qualidade
@@ -86,7 +70,8 @@ const Index = () => {
           ].map((feature, index) => (
             <div 
               key={index}
-              className="text-center p-6 rounded-lg bg-gradient-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-medium"
+              className="text-center p-6 rounded-lg bg-gradient-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-medium animate-fade-in-up"
+              style={{ animationDelay: `${0.3 + index * 0.15}s`, animationFillMode: 'both' }}
             >
               <div className="inline-flex p-3 bg-primary/10 rounded-full mb-4">
                 <feature.icon className="h-6 w-6 text-primary" />
