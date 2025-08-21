@@ -1,24 +1,72 @@
-# Liv Cannabis - Plataforma de Produtos Medicinais
+<p align="center">
+  <img src="banner.png" alt="Liv Cannabis Banner" width="600"/>
+</p>
 
-![Banner](banner.png)
+<h1 align="center">Liv Cannabis</h1>
+<p align="center">
+  Plataforma web moderna para apresentação e venda de produtos de cannabis medicinal.<br>
+  <b>Desenvolvido em React + Vite + TypeScript + Tailwind CSS + shadcn/ui</b>
+</p>
+<p align="center">
+  <a href="https://github.com/luisvs0/livcanabis/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
+  <a href="https://github.com/luisvs0/livcanabis/actions"><img src="https://img.shields.io/github/actions/workflow/status/luisvs0/livcanabis/ci.yml?branch=main&label=build" alt="Build Status"></a>
+  <a href="https://github.com/luisvs0/livcanabis/stargazers"><img src="https://img.shields.io/github/stars/luisvs0/livcanabis?style=social" alt="GitHub stars"></a>
+</p>
 
-## Descrição
+---
 
-**Liv Cannabis** é uma plataforma web moderna para apresentação e venda de produtos de cannabis medicinal, com foco em experiência do usuário, segurança e visual profissional. O projeto foi desenvolvido utilizando React, Vite, TypeScript, shadcn-ui e Tailwind CSS, trazendo uma interface responsiva, elegante e fácil de usar.
+## ✨ Visão Geral
 
-## Funcionalidades
+**[Liv Cannabis](https://github.com/luisvs0/livcanabis)** é uma plataforma web open source, escrita em [TypeScript](https://www.typescriptlang.org/) com [React](https://react.dev/) e [Vite](https://vitejs.dev/), para facilitar a apresentação, reserva e pagamento de produtos de cannabis medicinal. O projeto é licenciado sob a [MIT License](https://opensource.org/license/mit/).
 
-- **Catálogo de Produtos**: Visualização de diferentes opções de cannabis medicinal, com detalhes de peso, preço, economia e descrição.
-- **Compra Simples**: Processo de compra rápido, com seleção de quantidade e método de pagamento.
-- **Pagamento via Pix**: Geração de QR Code dinâmico, cronômetro de 15 minutos e fluxo de finalização.
-- **Pagamento via Cartão de Crédito**: Formulário seguro para dados do cartão e feedback visual de processamento.
-- **Diálogo de Confirmação**: Modal para preenchimento de dados do comprador e escolha do método de pagamento.
-- **Componentes reutilizáveis**: Vasta biblioteca de componentes UI (botões, cards, badges, inputs, etc).
-- **Design Responsivo**: Layout adaptado para desktop e mobile.
-- **Acessibilidade**: Uso de Radix UI e boas práticas para navegação acessível.
-- **Dark Mode**: Suporte a tema escuro.
+- **Primeiro release:** 2024
+- **Versão atual:** 0.0.0
 
-## Tecnologias Utilizadas
+---
+
+## 🚀 Demonstração
+
+![Demonstração](banner.png)
+
+> Veja o projeto rodando localmente seguindo o guia abaixo.
+
+---
+
+## 📦 Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/luisvs0/livcanabis.git
+cd livcanabis
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Acesse em: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🛠️ Funcionalidades
+
+- Catálogo de produtos de cannabis medicinal com detalhes e economia.
+- Processo de compra rápido e intuitivo.
+- Pagamento via Pix (QR Code + cronômetro de 15 minutos).
+- Pagamento via Cartão de Crédito (formulário seguro).
+- Modal de confirmação com coleta de dados do comprador.
+- Design responsivo e acessível.
+- Dark mode.
+- Componentes UI reutilizáveis (shadcn/ui).
+- Código limpo, modular e fácil de manter.
+
+---
+
+## 🧰 Tecnologias
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
@@ -30,7 +78,9 @@
 - [QRCode.react](https://github.com/zpao/qrcode.react)
 - [Lucide Icons](https://lucide.dev/)
 
-## Estrutura de Pastas
+---
+
+## 📂 Estrutura do Projeto
 
 ```
 src/
@@ -44,54 +94,80 @@ src/
   App.tsx         # Componente principal e rotas
 ```
 
-## Rotas Principais
+---
 
-- `/` - Página inicial
-- `/produtos` - Catálogo de produtos
-- `/pagamento` - Tela de pagamento (Pix ou Cartão)
-- `/login` - Autenticação de usuário
-- `*` - Página de erro 404
+## 🌐 Rotas Principais
 
-## Como rodar o projeto localmente
+- `/` — Página inicial
+- `/produtos` — Catálogo de produtos
+- `/pagamento` — Tela de pagamento (Pix ou Cartão)
+- `/login` — Autenticação de usuário
+- `*` — Página de erro 404
 
-1. **Clone o repositório:**
-   ```sh
-   git clone https://github.com/luisvs0/livcanabis.git
-   cd livcanabis
-   ```
+---
 
-2. **Instale as dependências:**
-   ```sh
-   npm install
-   ```
+## ⚡ Exemplo de Uso
 
-3. **Inicie o servidor de desenvolvimento:**
-   ```sh
-   npm run dev
-   ```
+### Pagamento via Pix
 
-4. **Acesse no navegador:**
-   ```
-   http://localhost:5173
-   ```
+1. Escolha o produto e clique em "Ir para o pagamento".
+2. Selecione "Pix" como forma de pagamento.
+3. Escaneie o QR Code exibido e finalize o pedido.
+4. O cronômetro de 15 minutos é exibido para garantir o tempo de pagamento.
 
-## Scripts Disponíveis
+### Pagamento via Cartão
 
-- `npm run dev` — Inicia o servidor de desenvolvimento com hot reload.
-- `npm run build` — Gera a build de produção.
-- `npm run preview` — Visualiza a build de produção localmente.
-- `npm run lint` — Executa o linter para manter a qualidade do código.
+1. Escolha o produto e clique em "Ir para o pagamento".
+2. Selecione "Cartão de Crédito" e preencha os dados.
+3. Clique em "Finalizar compra" para processar o pagamento.
 
-## Customização
+---
 
-- **Cores e Design System:** Editáveis em `src/index.css` e `tailwind.config.ts`.
-- **Imagens:** Substitua os arquivos em `src/assets/` para personalizar o visual.
-- **Componentes:** Crie ou edite componentes em `src/components/` e `src/components/ui/`.
+## 📝 Contribuindo
 
-## Contribuição
+Pull requests são bem-vindos! Para contribuir:
 
-Pull requests são bem-vindos! Sinta-se à vontade para abrir issues ou sugerir melhorias.
+1. Fork este repositório.
+2. Crie uma branch: `git checkout -b minha-feature`
+3. Commit suas alterações: `git commit -m 'feat: minha nova feature'`
+4. Push para sua branch: `git push origin minha-feature`
+5. Abra um Pull Request.
 
-## Licença
+Consulte o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) (crie um se desejar regras específicas).
 
-Este projeto é open-source sob a licença MIT.
+---
+
+## 👥 Comunidade & Suporte
+
+- [Issues](https://github.com/luisvs0/livcanabis/issues) — Relate bugs ou sugira melhorias.
+- [Discussões](https://github.com/luisvs0/livcanabis/discussions) — Tire dúvidas ou compartilhe ideias.
+
+---
+
+## 📖 Documentação & Links Úteis
+
+- [Documentação do React](https://react.dev/)
+- [Documentação do Vite](https://vitejs.dev/guide/)
+- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
+- [shadcn/ui](https://ui.shadcn.com/docs)
+- [Radix UI](https://www.radix-ui.com/docs/primitives/overview/introduction)
+- [QRCode.react](https://github.com/zpao/qrcode.react)
+- [Lucide Icons](https://lucide.dev/)
+
+---
+
+## 📄 Licença
+
+Distribuído sob a [Licença MIT](LICENSE).
+
+---
+
+## 🙌 Agradecimentos
+
+- Inspirado por projetos modernos de e-commerce e UI.
+- Ícones por [Lucide](https://lucide.dev/).
+- UI baseada em [shadcn/ui](https://ui.shadcn.com/).
+
+---
+
+> Feito com ❤️ por [Luis Gustavo](mailto:luisgustavodev@gmail.com) e colaboradores.
