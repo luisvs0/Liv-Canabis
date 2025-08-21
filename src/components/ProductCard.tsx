@@ -60,8 +60,8 @@ export const ProductCard = () => {
               alt="Cannabis Medicinal Liv" 
               className="w-full max-w-sm h-auto object-contain animate-float"
             />
-            <div className="absolute top-4 left-4">
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+            <div className="absolute top-4 left-4 z-20">
+              <Badge variant="secondary" className="bg-white/80 text-primary border-primary/20 shadow-md px-4 py-2">
                 Cannabis Medicinal
               </Badge>
             </div>
@@ -196,7 +196,7 @@ export const ProductCard = () => {
                     />
                   </div>
                   <DialogFooter>
-                    <Button type="submit" variant="hero" className="w-full text-lg font-bold py-3 rounded-xl shadow-md hover:scale-105 transition-transform">Enviar Pedido</Button>
+                    <Button type="submit" variant="hero" className="w-full text-lg font-bold py-3 rounded-xl shadow-md hover:scale-105 transition-transform">Ir para o pagamento</Button>
                   </DialogFooter>
                 </form>
               </DialogContent>
