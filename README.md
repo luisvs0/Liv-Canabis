@@ -170,4 +170,4 @@ Distribuído sob a [Licença MIT](LICENSE).
 
 ---
 
-> Feito com ❤️ por [Luis Gustavo](mailto:luisgustavodev@gmail.com) por diversão.
+> Feito com ❤️ por [Luis Vargas](mailto:luisgustavodev@gmail.com) por diversão.
