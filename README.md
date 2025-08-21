@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="liv-logo.png" alt="Liv Cannabis Banner" width="600"/>
+  <img src="Liv.png" alt="Liv Cannabis Banner" width="600"/>
 </p>
 
 <h1 align="center">Liv Cannabis</h1>
