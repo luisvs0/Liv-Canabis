@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Liv Cannabis - Plataforma de Produtos Medicinais
 
-## Project info
+![Banner](banner.png)
 
-**URL**: https://lovable.dev/projects/85d2c6b8-61ff-4468-b011-afecc15960f6
+## Descrição
 
-## How can I edit this code?
+**Liv Cannabis** é uma plataforma web moderna para apresentação e venda de produtos de cannabis medicinal, com foco em experiência do usuário, segurança e visual profissional. O projeto foi desenvolvido utilizando React, Vite, TypeScript, shadcn-ui e Tailwind CSS, trazendo uma interface responsiva, elegante e fácil de usar.
 
-There are several ways of editing your application.
+## Funcionalidades
 
-**Use Lovable**
+- **Catálogo de Produtos**: Visualização de diferentes opções de cannabis medicinal, com detalhes de peso, preço, economia e descrição.
+- **Compra Simples**: Processo de compra rápido, com seleção de quantidade e método de pagamento.
+- **Pagamento via Pix**: Geração de QR Code dinâmico, cronômetro de 15 minutos e fluxo de finalização.
+- **Pagamento via Cartão de Crédito**: Formulário seguro para dados do cartão e feedback visual de processamento.
+- **Diálogo de Confirmação**: Modal para preenchimento de dados do comprador e escolha do método de pagamento.
+- **Componentes reutilizáveis**: Vasta biblioteca de componentes UI (botões, cards, badges, inputs, etc).
+- **Design Responsivo**: Layout adaptado para desktop e mobile.
+- **Acessibilidade**: Uso de Radix UI e boas práticas para navegação acessível.
+- **Dark Mode**: Suporte a tema escuro.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/85d2c6b8-61ff-4468-b011-afecc15960f6) and start prompting.
+## Tecnologias Utilizadas
 
-Changes made via Lovable will be committed automatically to this repo.
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [React Router DOM](https://reactrouter.com/)
+- [QRCode.react](https://github.com/zpao/qrcode.react)
+- [Lucide Icons](https://lucide.dev/)
 
-**Use your preferred IDE**
+## Estrutura de Pastas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+  assets/         # Imagens e logos
+  components/     # Componentes reutilizáveis (UI, Header, Footer, ProductCard, etc)
+    ui/           # Componentes de interface (botão, card, dialog, etc)
+  pages/          # Páginas principais (Index, Products, Payment, Login, NotFound)
+  lib/            # Utilitários e helpers
+  hooks/          # Custom React hooks
+  index.css       # Estilos globais e design system
+  App.tsx         # Componente principal e rotas
 ```
 
-**Edit a file directly in GitHub**
+## Rotas Principais
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `/` - Página inicial
+- `/produtos` - Catálogo de produtos
+- `/pagamento` - Tela de pagamento (Pix ou Cartão)
+- `/login` - Autenticação de usuário
+- `*` - Página de erro 404
 
-**Use GitHub Codespaces**
+## Como rodar o projeto localmente
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Clone o repositório:**
+   ```sh
+   git clone https://github.com/luisvs0/livcanabis.git
+   cd livcanabis
+   ```
 
-## What technologies are used for this project?
+2. **Instale as dependências:**
+   ```sh
+   npm install
+   ```
 
-This project is built with:
+3. **Inicie o servidor de desenvolvimento:**
+   ```sh
+   npm run dev
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Acesse no navegador:**
+   ```
+   http://localhost:5173
+   ```
 
-## How can I deploy this project?
+## Scripts Disponíveis
 
-Simply open [Lovable](https://lovable.dev/projects/85d2c6b8-61ff-4468-b011-afecc15960f6) and click on Share -> Publish.
+- `npm run dev` — Inicia o servidor de desenvolvimento com hot reload.
+- `npm run build` — Gera a build de produção.
+- `npm run preview` — Visualiza a build de produção localmente.
+- `npm run lint` — Executa o linter para manter a qualidade do código.
 
-## Can I connect a custom domain to my Lovable project?
+## Customização
 
-Yes, you can!
+- **Cores e Design System:** Editáveis em `src/index.css` e `tailwind.config.ts`.
+- **Imagens:** Substitua os arquivos em `src/assets/` para personalizar o visual.
+- **Componentes:** Crie ou edite componentes em `src/components/` e `src/components/ui/`.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Contribuição
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Pull requests são bem-vindos! Sinta-se à vontade para abrir issues ou sugerir melhorias.
+
+## Licença
+
+Este projeto é open-source sob a licença MIT.
